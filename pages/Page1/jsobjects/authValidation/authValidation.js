@@ -1,13 +1,10 @@
 export default {
 	listenIframeCommunication: async() => {
-		console.log(appsmith.URL.protocol+'//'+appsmith.URL.host);
 		windowMessageListener(
-			// 'https://appsmith.devenv-crm.cc.capillarytech.com',
-			appsmith.URL.protocol+'//'+ appsmith.URL.host,
+			appsmith.URL.protocol+'//'+ appsmith.URL.host, // 'https://appsmith.devenv-crm.cc.capillarytech.com'
 			(message) => {
 				if (message.type === 'userData') {
 					storeValue('userContext', message.userData);
-					console.log('NIKHIL authToken: ', this.sanitizeAuthToken(message.authToken));
 					storeValue('authToken', this.sanitizeAuthToken(message.authToken), false);
 				}
 				if (message.type === 'clearState') {

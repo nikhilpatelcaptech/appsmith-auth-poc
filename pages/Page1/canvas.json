@@ -369,7 +369,7 @@
               "confirmBeforeExecute": false,
               "pluginType": "JS",
               "jsonPathKeys": [
-                "async () => {\n  console.log(appsmith.URL.protocol + '//' + appsmith.URL.host);\n  windowMessageListener(appsmith.URL.protocol + '//' + appsmith.URL.host, message => {\n    if (message.type === 'userData') {\n      storeValue('userContext', message.userData);\n      console.log('NIKHIL authToken: ', authValidation.sanitizeAuthToken(message.authToken));\n      storeValue('authToken', authValidation.sanitizeAuthToken(message.authToken), false);\n    }\n    if (message.type === 'clearState') {\n      clearStore();\n      unlistenWindowMessage(appsmith.URL.protocol + '//' + appsmith.URL.host);\n    }\n  });\n}"
+                "async () => {\n  windowMessageListener(appsmith.URL.protocol + '//' + appsmith.URL.host, message => {\n    if (message.type === 'userData') {\n      storeValue('userContext', message.userData);\n      storeValue('authToken', authValidation.sanitizeAuthToken(message.authToken), false);\n    }\n    if (message.type === 'clearState') {\n      clearStore();\n      unlistenWindowMessage(appsmith.URL.protocol + '//' + appsmith.URL.host);\n    }\n  });\n}"
               ],
               "timeoutInMillisecond": 10000
             }
