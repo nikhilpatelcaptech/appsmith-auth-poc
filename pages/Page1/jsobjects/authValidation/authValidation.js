@@ -3,6 +3,7 @@ export default {
 		windowMessageListener(
 			appsmith.URL.protocol+'//'+ appsmith.URL.host, // 'https://appsmith.devenv-crm.cc.capillarytech.com'
 			(message) => {
+				console.log('NIKHIL message: ',message);
 				if (message.type === 'userData') {
 					storeValue('userContext', message.userData);
 					storeValue('authToken', this.sanitizeAuthToken(message.authToken), false);
