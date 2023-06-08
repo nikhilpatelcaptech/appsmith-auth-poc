@@ -1,7 +1,9 @@
 export default {
 	listenIframeCommunication: async() => {
+		console.log(appsmith.URL.protocol+'//'+appsmith.URL.host);
 		windowMessageListener(
-			'http://localhost:8000',
+			// 'https://appsmith.devenv-crm.cc.capillarytech.com',
+			appsmith.URL.protocol+'//'+ appsmith.URL.host,
 			(message) => {
 				if (message.type === 'userData') {
 					storeValue('userContext', message.userData);
@@ -10,7 +12,7 @@ export default {
 				}
 				if (message.type === 'clearState') {
 					clearStore();
-					unlistenWindowMessage('http://localhost:8000');
+					unlistenWindowMessage(appsmith.URL.protocol+'//'+ appsmith.URL.host);
 				}
 			});
 	},
