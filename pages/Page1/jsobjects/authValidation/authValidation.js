@@ -1,7 +1,7 @@
 export default {
 	listenIframeCommunication: async() => {
 		windowMessageListener(
-			appsmith.URL.protocol+'//'+ appsmith.URL.host, // 'https://appsmith.devenv-crm.cc.capillarytech.com'
+			'https://devenv-crm.cc.capillarytech.com', //  appsmith.URL.protocol+'//'+ appsmith.URL.host
 			(message) => {
 				console.log('NIKHIL message: ',message);
 				if (message.type === 'userData') {
@@ -10,7 +10,7 @@ export default {
 				}
 				if (message.type === 'clearState') {
 					clearStore();
-					unlistenWindowMessage(appsmith.URL.protocol+'//'+ appsmith.URL.host);
+					unlistenWindowMessage('https://devenv-crm.cc.capillarytech.com'); //appsmith.URL.protocol+'//'+ appsmith.URL.host
 				}
 			});
 	},
