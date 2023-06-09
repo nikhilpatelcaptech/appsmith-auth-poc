@@ -362,14 +362,6 @@
         "layoutOnLoadActions": [
           [
             {
-              "id": "Page1_Api1",
-              "name": "Api1",
-              "confirmBeforeExecute": false,
-              "pluginType": "API",
-              "jsonPathKeys": [],
-              "timeoutInMillisecond": 10000
-            },
-            {
               "id": "Page1_authValidation.listenIframeCommunication",
               "name": "authValidation.listenIframeCommunication",
               "collectionId": "Page1_authValidation",
