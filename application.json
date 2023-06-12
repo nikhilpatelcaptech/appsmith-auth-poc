@@ -8,6 +8,11 @@
   "viewMode": false,
   "appIsExample": false,
   "unreadCommentThreads": 0,
+  "unpublishedApplicationDetail": {
+    "appPositioning": {
+      "type": "FIXED"
+    }
+  },
   "color": "#D9E7FF",
   "icon": "single-person",
   "unpublishedCustomJSLibs": [],
